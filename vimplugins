@@ -1,0 +1,49 @@
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" Library
+Plugin 'L9'
+
+
+" Theme
+Plugin 'nanotech/jellybeans.vim' 
+
+" MRU Cache
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Auto-completion
+Plugin 'valloric/youcompleteme'
+
+" Syntax checking
+Plugin 'scrooloose/syntastic'
+
+" Nerdtree
+Plugin 'scrooloose/nerdtree'
+
+" Statusline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
+
+" Startpage
+Plugin 'mhinz/vim-startify'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+
+" Javascript support
+Plugin 'pangloss/vim-javascript'
+
+" Golang support
+Plugin 'fatih/vim-go'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" vim: set ft=vim:
