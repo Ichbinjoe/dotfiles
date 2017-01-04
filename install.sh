@@ -33,6 +33,7 @@ install-file() {
 mkdirp "$HOME"
 install-file "tmux.conf" "$HOME/.tmux.conf"
 install-file "zshrc" "$HOME/.zshrc"
+install-file "xresources" "$HOME/.Xresources"
 
 mkdirp "$HOME/.config/nvim"
 install-file "vimrc" "$HOME/.config/nvim/init.vim"

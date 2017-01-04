@@ -1,0 +1,16 @@
+
+UXterm*termName: xterm-256color
+UXTerm*locale: true
+UXTerm*utf8: 1
+UXTerm*metaSendsEscape: true
+UXTerm*eightBitInput: false
+UXTerm*backarrowKey: false
+UXTerm*ttyModes: erase ^?
+
+UXTerm*reverseVideo: on
+UXTerm*faceName: Source Code Pro for Powerline
+UXTerm*faceSize: 12
+
+UXTerm*borderWidth: 0
+
+! vim: set ft=xdefaults:
