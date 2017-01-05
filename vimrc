@@ -55,6 +55,13 @@ set backupdir=~/.backup/
 " Disable mouse
 set mouse=
 
+" Set language
+autocmd BufRead,BufNewFile *.md,*.tex,*.txt setlocal spell
+set spelllang=en_us
+
+" Autowrap md, tex, and txt
+autocmd BufRead,BufNewFile *.md,*.tex,*.txt setlocal textwidth=80 wrap
+
 " Prev. buffer mapped to Ctrl-H
 nnoremap <silent> <C-h> :tabprevious<CR>
 " Next buffer mapped to Ctrl-L
