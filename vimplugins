@@ -6,8 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Library
-Plugin 'L9'
-
+Plugin 'L9' 
 
 " Theme
 Plugin 'nanotech/jellybeans.vim' 
@@ -42,6 +41,9 @@ Plugin 'pangloss/vim-javascript'
 
 " Golang support
 Plugin 'fatih/vim-go'
+
+" i3 config support
+Plugin 'PotatoesMaster/i3-vim-syntax'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -35,11 +35,15 @@ install-file "tmux.conf" "$HOME/.tmux.conf"
 install-file "zshrc" "$HOME/.zshrc"
 install-file "xresources" "$HOME/.Xresources"
 install-file "latexmkrc" "$HOME/.latexmkrc"
+install-file "xmodmap" "$HOME/.xmodmap"
+install-file "xinitrc" "$HOME/.xinitrc"
 
-mkdirp "$HOME/.config/nvim"
+mkdirp "$HOME/.config/nvim/ftplugin"
 install-file "vimrc" "$HOME/.config/nvim/init.vim"
+install-file "sh.vim" "$HOME/.config/nvim/ftplugin/sh.vim"
 install-file "vimplugins" "$HOME/.config/nvim/plugins.vim"
-
+mkdirp "$HOME/.config/i3/"
+install-file "i3" "$HOME/.config/i3/config"
 vimbundle="$HOME/.config/nvim/bundle"
 if [ ! -e "$vimbundle" ]; then
     mkdirp "$vimbundle"
