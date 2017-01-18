@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(copydir copyfile docker extract gitfast golang gradlei npm pip tmux vi-mode)
 
 # User configuration
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/bin"
 export GOPATH=/home/joe/workspace/go
 
 alias pdf='evince'
