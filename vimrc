@@ -2,14 +2,22 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+if has("nvim")
+    let vimdir = $HOME . "/.config/nvim"
+else
+    let vimdir = $HOME . "/.vim"
+endif
+
 " Plugins
-source $HOME/.config/nvim/plugins.vim
+let pluginsVim = vimdir . '/plugins.vim'
+exec "source " . pluginsVim 
+
 
 " Syntax highlights, colorscheme
 syntax on
 
 " Only use colorscheme if it exists!
-if isdirectory($HOME . '/.config/nvim/bundle/jellybeans.vim')
+if isdirectory(vimdir . '/bundle/jellybeans.vim')
     colorscheme jellybeans
 else
     colorscheme default

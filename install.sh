@@ -38,30 +38,48 @@ install-file "latexmkrc" "$HOME/.latexmkrc"
 install-file "xmodmap" "$HOME/.xmodmap"
 install-file "xinitrc" "$HOME/.xinitrc"
 
-mkdirp "$HOME/.config/nvim/ftplugin"
-install-file "vimrc" "$HOME/.config/nvim/init.vim"
-install-file "sh.vim" "$HOME/.config/nvim/ftplugin/sh.vim"
-install-file "vimplugins" "$HOME/.config/nvim/plugins.vim"
+if [ -e "/usr/bin/nvim" ]; then
+    vimdir="$HOME/.config/nvim"
+    vimrc="$vimdir/init.vim"
+else
+    vimdir="$HOME/.vim"
+    vimrc="$HOME/.vimrc"
+fi
+
+mkdirp "$vimdir/ftplugin"
+install-file "vimrc" "$vimrc"
+install-file "sh.vim" "$vimdir/ftplugin/sh.vim"
+install-file "vimplugins" "$vimdir/plugins.vim"
 mkdirp "$HOME/.config/i3/"
 install-file "i3" "$HOME/.config/i3/config"
-vimbundle="$HOME/.config/nvim/bundle"
+vimbundle="$vimdir/bundle"
+
 if [ ! -e "$vimbundle" ]; then
     mkdirp "$vimbundle"
-    mkdirp "$HOME/.vim"
-    if [ -e "$HOME/.vim/bundle" ]; then
-        rm -rf "$HOME/.vim/bundle"
+    if [ $vimdir != "$HOME/.vim/bundle" ]; then
+        mkdirp "$HOME/.vim"
+        if [ -e "$HOME/.vim/bundle" ]; then
+            rm -rf "$HOME/.vim/bundle"
+        fi
+        install-raw "$vimbundle" "$HOME/.vim/bundle"
     fi
-    install-raw "$vimbundle" "$HOME/.vim/bundle"
+
     git clone "https://github.com/VundleVim/Vundle.vim.git" "$vimbundle/Vundle.vim"
-    # shamelessly stolen from https://github.com/shoelick/dotfiles/blob/master/packages/neovim/neovim.sh#L78
-    nvim +colorscheme default +PluginInstall +qall
+    if [ -e "/usr/bin/nvim" ]; then
+        # shamelessly stolen from https://github.com/shoelick/dotfiles/blob/master/packages/neovim/neovim.sh#L78
+        nvim +colorscheme default +PluginInstall +qall
+    else
+        vim -s "$scriptdir/install.vim"        
+    fi
 
-    cur_dir=$(pwd)
-    
-    cd "$vimbundle/youcompleteme"
-    ./install.py --gocode-completer --tern-completer --clang-completer
+    if [ -d $vimbundle/youcompleteme ]; then
+        cur_dir=$(pwd)
+            
+        cd "$vimbundle/youcompleteme"
+        ./install.py --gocode-completer --tern-completer --clang-completer
 
-    cd $cur_dir
+        cd $cur_dir
+    fi
 fi
 
 mkdirp "$HOME/.oh-my-zsh/custom/themes"

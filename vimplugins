@@ -1,5 +1,5 @@
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+exec 'set rtp+=' . vimdir . '/bundle/Vundle.vim'
 call vundle#begin()
 
 " Vundle
@@ -15,8 +15,9 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Auto-completion
-Plugin 'valloric/youcompleteme'
-
+if has('python')
+    Plugin 'valloric/youcompleteme'
+endif
 " Syntax checking
 Plugin 'scrooloose/syntastic'
 
