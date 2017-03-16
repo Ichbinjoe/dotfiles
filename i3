@@ -2,7 +2,6 @@
 # It will not be overwritten, so edit it as you like.  
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).  
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -11,7 +10,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Source Code Pro for Powerline 8
+font pango:Source Code Pro for Powerline 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -28,12 +27,30 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec uxterm
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# colors
+set $white          #FFFFFF
+set $darker_main    #052839
+set $dark_main      #154054
+set $main           #2B576D
+set $light_main     #497286
+set $lighter_main   #7192A2
+
+set $dark_urgent    #85321C
+set $urgent         #AC553E
+set $light_urgent   #D4846F
+
+# http://paletton.com/#uid=33s0u0kktlza1w4fhqCpagJuHbk
+# colorclass            border          background      text            indicator       child_border
+client.focused          $dark_main      $main           $white          $light_main     $dark_main
+client.focused_inactive $darker_main    $dark_main      $lighter_main   $light_main     $darker_main
+client.unfocused        $darker_main    $darker_main    $main           $light_main     $darker_main
+client.urgent           $dark_urgent    $urgent         $white          $light_urgent   $dark_urgent   
+
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -52,10 +69,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod++Shift+v split h
+bindsym $mod++Shift+v split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -133,11 +150,15 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        font "Source Code Pro for Powerline 10"
 }
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
@@ -146,7 +167,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 hide_edge_borders both
 
-exec_always feh --bg-scale /var/background/background.jpg
-exec_always xmodmap .xmodmap
+exec_always --no-startup-id feh --bg-scale /var/background/background.jpg
+exec_always --no-startup-id xmodmap .xmodmap
 
 # vim:ft=i3

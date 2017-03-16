@@ -39,6 +39,7 @@ Plugin 'airblade/vim-gitgutter'
 
 " Javascript support
 Plugin 'pangloss/vim-javascript'
+Plugin 'maksimr/vim-jsbeautify'
 
 " Golang support
 Plugin 'fatih/vim-go'
