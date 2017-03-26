@@ -169,5 +169,6 @@ hide_edge_borders both
 
 exec_always --no-startup-id feh --bg-scale /var/background/background.jpg
 exec_always --no-startup-id xmodmap .xmodmap
+exec_always --no-startup-id compton
 
 # vim:ft=i3

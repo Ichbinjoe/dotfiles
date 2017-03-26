@@ -49,6 +49,8 @@ fi
 mkdirp "$vimdir/ftplugin"
 install-file "vimrc" "$vimrc"
 install-file "sh.vim" "$vimdir/ftplugin/sh.vim"
+install-file "javascript.vim" "$vimdir/ftplugin/javascript.vim"
+install-file "json.vim" "$vimdir/ftplugin/json.vim"
 install-file "vimplugins" "$vimdir/plugins.vim"
 mkdirp "$HOME/.config/i3/"
 install-file "i3" "$HOME/.config/i3/config"
@@ -56,7 +58,7 @@ vimbundle="$vimdir/bundle"
 
 if [ ! -e "$vimbundle" ]; then
     mkdirp "$vimbundle"
-    if [ $vimdir != "$HOME/.vim/bundle" ]; then
+    if [ $vimbundle != "$HOME/.vim/bundle" ]; then
         mkdirp "$HOME/.vim"
         if [ -e "$HOME/.vim/bundle" ]; then
             rm -rf "$HOME/.vim/bundle"
@@ -84,4 +86,3 @@ fi
 
 mkdirp "$HOME/.oh-my-zsh/custom/themes"
 install-file "zsh-theme" "$HOME/.oh-my-zsh/custom/themes/custom.zsh-theme"
-
