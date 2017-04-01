@@ -62,5 +62,6 @@ zle -N down-line-or-beginning-search
 [[ -n "$key[Up]"   ]] && bindkey -- "$key[Up]"   up-line-or-beginning-search
 [[ -n "$key[Down]" ]] && bindkey -- "$key[Down]" down-line-or-beginning-search
 
-# vim: set ft=zsh: 
 alias a11='. /home/joe/ws/a11/paper'
+
+# vim: set ft=zsh: 
