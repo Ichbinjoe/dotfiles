@@ -1,1 +1,2 @@
-set shiftwidth=2
+set shiftwidth=4
+set foldmethod=indent

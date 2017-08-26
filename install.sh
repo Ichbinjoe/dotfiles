@@ -87,3 +87,4 @@ fi
 
 mkdirp "$HOME/.oh-my-zsh/custom/themes"
 install-file "zsh-theme" "$HOME/.oh-my-zsh/custom/themes/custom.zsh-theme"
+install-file "sudoers" "/etc/sudoers.d/99-keepenv"

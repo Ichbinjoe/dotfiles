@@ -1,4 +1,4 @@
-" set the runtime path to include Vundle and initialize
+"set the runtime path to include Vundle and initialize
 exec 'set rtp+=' . vimdir . '/bundle/Vundle.vim'
 call vundle#begin()
 
@@ -10,6 +10,7 @@ Plugin 'L9'
 
 " Theme
 Plugin 'nanotech/jellybeans.vim' 
+Plugin 'notpratheek/vim-sol'
 
 " MRU Cache
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -27,7 +28,7 @@ Plugin 'scrooloose/nerdtree'
 " Statusline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bling/vim-bufferline'
+"Plugin 'bling/vim-bufferline'
 
 " Startpage
 Plugin 'mhinz/vim-startify'
@@ -40,12 +41,17 @@ Plugin 'airblade/vim-gitgutter'
 " Javascript support
 Plugin 'pangloss/vim-javascript'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'ternjs/tern_for_vim'
 
 " Golang support
 Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'nvim/'}
 
 " i3 config support
 Plugin 'PotatoesMaster/i3-vim-syntax'
+
+" nmap syntax support
+Plugin 'vim-scripts/Nmap-syntax-highlight'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

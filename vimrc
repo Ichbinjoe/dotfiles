@@ -19,6 +19,7 @@ syntax on
 " Only use colorscheme if it exists!
 if isdirectory(vimdir . '/bundle/jellybeans.vim')
     colorscheme jellybeans
+    "colorscheme sol-term
 else
     colorscheme default
 endif
@@ -82,5 +83,14 @@ nnoremap <silent> <C-n> :NERDTree<CR>
 
 " Toggle fold mapped to spacebar
 nnoremap <Space> za
+
+if has("multi_byte")
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
 
 " vim: set ft=vim:
