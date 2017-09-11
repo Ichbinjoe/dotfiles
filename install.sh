@@ -55,6 +55,9 @@ install-file "python.vim" "$vimdir/ftplugin/python.vim"
 install-file "vimplugins" "$vimdir/plugins.vim"
 mkdirp "$HOME/.config/i3/"
 install-file "i3" "$HOME/.config/i3/config"
+install-file "i3lock-multimonitor" "$HOME/.config/i3/i3lock-multimonitor"
+mkdirp "$HOME/.config/i3status"
+install-file "i3status" "$HOME/.config/i3status/config"
 vimbundle="$vimdir/bundle"
 
 if [ ! -e "$vimbundle" ]; then
