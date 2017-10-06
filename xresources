@@ -17,11 +17,11 @@ UXTerm*selectToClipboard: true
 
 rofi*match: fuzzy
 rofi*terminal: uxterm
-rofi*color-window: #497286,#052839,#2B576D
+rofi*color-window: #431554,#190122,#431554
 rofi*font: Source Code Pro for Powerline 15
-rofi*color-normal: #497286,#eeeeee,#2B576D,#052839,#ffffff
-rofi*color-urgent: #85321C,#ffffff,#D4846F,#D4846F,#D4746F
-rofi*color-active: #497286,#ffffff,#2B576D,#052839,#ffffff
+rofi*color-normal: #431554,#eeeeee,#2C063A,#190112,#ffffff
+rofi*color-urgent: #764887,#ffffff,#5A2A6B,#764887,#5A2A6B
+rofi*color-active: #431554,#ffffff,#2C063A,#190122,#ffffff
 rofi*bw: 1
 rofi*scrollbar-width: 0
 rofi*hide_scrollbar: true

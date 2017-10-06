@@ -16,8 +16,8 @@ font pango:Source Code Pro for Powerline 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec uxterm
-bindsym $mod+Shift+Return exec firefox
+bindsym $mod+Return exec --no-startup-id uxterm
+bindsym $mod+Shift+Return exec --no-startup-id firefox
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -41,7 +41,7 @@ client.unfocused        $darker_main    $darker_main    $lighter_main   $light_m
 client.urgent           $dark_urgent    $urgent         $white          $light_urgent   $dark_urgent   
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
