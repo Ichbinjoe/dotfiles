@@ -140,8 +140,17 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        font "Source Code Pro for Powerline 10"
+    status_command i3status
+    font "Source Code Pro for Powerline 10"
+    colors { 
+        background $darker_main
+        separator $dark_main
+
+        focused_workspace  $dark_main      $main        $white          
+        inactive_workspace $darker_main    $main        $lighter_main   
+        active_workspace   $darker_main    $dark_main   $lighter_main   
+        urgent_workspace   $dark_urgent    $urgent      $white          
+    }
 }
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -u -i 5
