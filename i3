@@ -24,21 +24,21 @@ bindsym $mod+Shift+q kill
 
 # colors
 set $white          #FFFFFF
-set $darker_main    #052839
-set $dark_main      #154054
-set $main           #2B576D
-set $light_main     #497286
-set $lighter_main   #7192A2
+set $darker_main    #190122
+set $dark_main      #2C063A
+set $main           #431554
+set $light_main     #5A2A6B
+set $lighter_main   #764887
 
-set $dark_urgent    #85321C
-set $urgent         #AC553E
-set $light_urgent   #D4846F
+set $dark_urgent    #490525
+set $urgent         #6A173E
+set $light_urgent   #87315A
 
-# http://paletton.com/#uid=33s0u0kktlza1w4fhqCpagJuHbk
+# http://paletton.com/#uid=14M0u0ko+fUfzpykikiu0aYE26o
 # colorclass            border          background      text            indicator       child_border
 client.focused          $dark_main      $main           $white          $light_main     $dark_main
 client.focused_inactive $darker_main    $dark_main      $lighter_main   $light_main     $darker_main
-client.unfocused        $darker_main    $darker_main    $main           $light_main     $darker_main
+client.unfocused        $darker_main    $darker_main    $lighter_main   $light_main     $darker_main
 client.urgent           $dark_urgent    $urgent         $white          $light_urgent   $dark_urgent   
 
 # start dmenu (a program launcher)

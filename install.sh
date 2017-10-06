@@ -31,6 +31,7 @@ install-file() {
 }
 
 mkdirp "$HOME"
+install-file "wallpaper.png" "$HOME/wallpaper.png"
 install-file "tmux.conf" "$HOME/.tmux.conf"
 install-file "zshrc" "$HOME/.zshrc"
 install-file "xresources" "$HOME/.Xresources"

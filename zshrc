@@ -27,8 +27,6 @@ plugins=(copydir copyfile docker extract gitfast golang gradle npm pip tmux vi-m
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/bin:$HOME/ws/go/bin"
 export GOPATH=/home/joe/ws/go
 
-alias pdf='evince'
-
 if [ -e "/usr/bin/nvim" ]; then
     viexe="nvim"
 else

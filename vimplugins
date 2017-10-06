@@ -53,6 +53,10 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 " nmap syntax support
 Plugin 'vim-scripts/Nmap-syntax-highlight'
 
+Plugin 'rust-lang/rust.vim'
+
+Plugin 'mephux/bro.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
