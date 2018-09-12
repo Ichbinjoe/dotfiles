@@ -83,7 +83,21 @@ if [ ! -e "$vimbundle" ]; then
         cur_dir=$(pwd)
             
         cd "$vimbundle/youcompleteme"
-        ./install.py --all
+        # need to figure out what completers we have support for
+        ycm_args="--clang-completer"
+        if [ ! -z "$(command -v xbuild)" ]; then
+            ycm_args+=" --cs-completer"
+        fi
+        if [ ! -z "$(command -v npm)" ]; then
+            ycm_args+=" --js-completer"
+        fi
+        if [ ! -z "$(command -v rustc)" ]; then
+            ycm_args+=" --rust-completer"
+        fi
+        if [ ! -z "$(command -v javac)" ]; then
+            ycm_args+=" --java-completer"
+        fi
+        ./install.py $ycm_args
 
         cd $cur_dir
     fi
