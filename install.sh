@@ -83,7 +83,7 @@ if [ ! -e "$vimbundle" ]; then
         cur_dir=$(pwd)
             
         cd "$vimbundle/youcompleteme"
-        ./install.py --gocode-completer --tern-completer --clang-completer
+        ./install.py --all
 
         cd $cur_dir
     fi
@@ -91,4 +91,5 @@ fi
 
 mkdirp "$HOME/.oh-my-zsh/custom/themes"
 install-file "zsh-theme" "$HOME/.oh-my-zsh/custom/themes/custom.zsh-theme"
+mkdirp "/etc/sudoers.d"
 install-file "sudoers" "/etc/sudoers.d/99-keepenv"
