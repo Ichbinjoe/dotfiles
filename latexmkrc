@@ -1,5 +1,5 @@
 $dvi_previewer = 'xdvi -watchfile 1.5';
-$pdf_previewer = 'start gv';
+$pdf_previewer = 'start evince';
 
 $pdf_mode = 1
 

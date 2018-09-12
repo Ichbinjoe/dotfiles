@@ -26,6 +26,7 @@ plugins=(copydir copyfile docker extract gitfast golang gradle npm pip tmux vi-m
 # User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/bin:$HOME/ws/go/bin"
 export GOPATH=/home/joe/ws/go
+export GOROOT=/usr/lib/go
 
 if [ -e "/usr/bin/nvim" ]; then
     viexe="nvim"
@@ -61,5 +62,5 @@ zle -N down-line-or-beginning-search
 [[ -n "$key[Down]" ]] && bindkey -- "$key[Down]" down-line-or-beginning-search
 
 alias a11='. /home/joe/ws/a11/paper'
-
+source /opt/ros/melodic/setup.zsh
 # vim: set ft=zsh: 

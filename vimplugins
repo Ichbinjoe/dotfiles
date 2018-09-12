@@ -16,9 +16,9 @@ Plugin 'notpratheek/vim-sol'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Auto-completion
-if has('python')
+"if has('python')
     Plugin 'valloric/youcompleteme'
-endif
+"endif
 " Syntax checking
 Plugin 'scrooloose/syntastic'
 
@@ -56,6 +56,10 @@ Plugin 'vim-scripts/Nmap-syntax-highlight'
 Plugin 'rust-lang/rust.vim'
 
 Plugin 'mephux/bro.vim'
+
+Plugin 'leafgarland/typescript-vim'
+
+Plugin 'cespare/vim-toml'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
