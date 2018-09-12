@@ -60,6 +60,8 @@ install-file "i3lock-multimonitor" "$HOME/.config/i3/i3lock-multimonitor"
 mkdirp "$HOME/.config/i3status"
 install-file "i3status" "$HOME/.config/i3status/config"
 vimbundle="$vimdir/bundle"
+mkdirp "$HOME/.backup"
+mkdirp "$HOME/.undo"
 
 if [ ! -e "$vimbundle" ]; then
     mkdirp "$vimbundle"
